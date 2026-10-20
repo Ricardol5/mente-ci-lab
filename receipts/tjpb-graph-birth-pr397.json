@@ -12,6 +12,14 @@
     "source_axis": "linguagem",
     "target_axis_does_not_own_source_concept": true
   },
+  "public_ci_evidence": {
+    "repository": "Ricardol5/mente-ci-lab",
+    "run_id": 39505822311,
+    "job_id": 118914356803,
+    "checkout_sha": "e58ef994cc3558ff596fdc38bd1463581b09d40b",
+    "pytest_result": "4 passed in 0.02s",
+    "scope": "PUBLIC_SYNTHETIC_ONLY"
+  },
   "private_ci_status": "NOT_PROVEN",
   "graph_link_persisted": false,
   "b3_authority_persisted": false,
