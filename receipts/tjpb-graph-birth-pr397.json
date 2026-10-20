@@ -1,0 +1,22 @@
+{
+  "case": "TJPB_GRAPH_BIRTH_PAPAI_OBM_01W",
+  "private_repository": "Ricardol5/plataforma-manager",
+  "private_pr": 397,
+  "private_head_sha": "959e85b8f490de159c2fea7828208072c958f694",
+  "private_code_in_public_repo": false,
+  "verification_class": "PUBLIC_SYNTHETIC_AND_METADATA_ONLY",
+  "minimal_link": {
+    "axis_target": "tjpb",
+    "official_subitem": "5.4",
+    "concept_id": "90e48763-3434-4ede-b02e-912d2faed530",
+    "source_axis": "linguagem",
+    "target_axis_does_not_own_source_concept": true
+  },
+  "private_ci_status": "NOT_PROVEN",
+  "graph_link_persisted": false,
+  "b3_authority_persisted": false,
+  "rmd_adi_admitted": false,
+  "sessions_released": false,
+  "runtime_activated": false,
+  "production_observed": false
+}
