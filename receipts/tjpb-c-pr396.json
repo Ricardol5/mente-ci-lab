@@ -1,0 +1,17 @@
+{
+  "case": "TJPB_C_MVO_CHAT_AUDIT_REANCHOR_01W",
+  "scope": "DOCUMENTATION_ONLY",
+  "pr": 396,
+  "private_head_sha": "f31cf491cd4f86c5a284a8e2213f4d96545bb168",
+  "private_git_blob_sha1": "eb3f79a3464ffadde03e571e1284726af57d4fcb",
+  "changed_files": 1,
+  "additions": 101,
+  "deletions": 0,
+  "private_content_in_public_repo": false,
+  "graph_db_write": false,
+  "wagon_c_seal": "OPEN",
+  "private_ci_status": "NOT_PROVEN",
+  "verification_class": "PUBLIC_METADATA_SCHEMA_ONLY",
+  "local_readback": "ONE_MARKDOWN_FILE_NO_TRAILING_WHITESPACE",
+  "provenance": "PRIVATE_GITHUB_CONNECTOR_READ_ONLY"
+}
