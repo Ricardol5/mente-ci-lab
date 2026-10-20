@@ -1,0 +1,35 @@
+name: MENTE Documentary Custody Receipt
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'receipts/tjpb-c-pr396.json'
+      - '.github/workflows/documentary-custody-receipt.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  documentary-receipt:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate public custody receipt without private source
+        shell: python
+        run: |
+          import json, re
+          from pathlib import Path
+          d = json.loads(Path('receipts/tjpb-c-pr396.json').read_text())
+          assert d['case'] == 'TJPB_C_MVO_CHAT_AUDIT_REANCHOR_01W'
+          assert d['scope'] == 'DOCUMENTATION_ONLY'
+          assert d['pr'] == 396
+          assert re.fullmatch(r'[0-9a-f]{40}', d['private_head_sha'])
+          assert re.fullmatch(r'[0-9a-f]{40}', d['private_git_blob_sha1'])
+          assert d['changed_files'] == 1
+          assert d['additions'] == 101 and d['deletions'] == 0
+          assert d['private_content_in_public_repo'] is False
+          assert d['graph_db_write'] is False
+          assert d['wagon_c_seal'] == 'OPEN'
+          assert d['private_ci_status'] == 'NOT_PROVEN'
+          assert d['verification_class'] == 'PUBLIC_METADATA_SCHEMA_ONLY'
+          print('PUBLIC_METADATA_SCHEMA_PASS; PRIVATE_CODE_NOT_TESTED; NO_PRIVATE_SOURCE')
