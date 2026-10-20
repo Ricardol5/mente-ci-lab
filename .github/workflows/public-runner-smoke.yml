@@ -1,0 +1,22 @@
+name: MENTE Public Runner Smoke
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/public-runner-smoke.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Verify public runner
+        run: |
+          echo "MENTE_PUBLIC_RUNNER=PASS"
+          python3 --version
+          echo "PRODUCTION_ACCESS=NONE"
