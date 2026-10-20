@@ -6,6 +6,7 @@ on:
     paths:
       - 'lab/hem_synthetic_contract.py'
       - 'tests/test_hem_synthetic_stop_recovery.py'
+      - 'tests/test_hem_synthetic_aqm_guards.py'
       - '.github/workflows/hem-synthetic-stop-recovery.yml'
   workflow_dispatch:
 
@@ -24,4 +25,4 @@ jobs:
       - name: Install pytest
         run: python -m pip install pytest
       - name: Execute four synthetic HEM guards
-        run: python -m pytest -q tests/test_hem_synthetic_stop_recovery.py
+        run: python -m pytest -q tests/test_hem_synthetic_stop_recovery.py tests/test_hem_synthetic_aqm_guards.py
