@@ -1,0 +1,27 @@
+name: HEM Children Public Contract
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'lab/hem_children_public_contract.py'
+      - 'tests/test_hem_children_public_contract.py'
+      - '.github/workflows/hem-children-public-contract.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  hem-children-synthetic:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - name: Install pytest
+        run: python -m pip install pytest
+      - name: Run synthetic Addendum 08 guards
+        run: python -m pytest -q tests/test_hem_children_public_contract.py
