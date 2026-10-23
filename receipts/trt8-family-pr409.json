@@ -2,7 +2,7 @@
   "case": "TRT8_FAMILY_WAGON_C_PUBLIC_SYNTHETIC_02W",
   "private_repository": "Ricardol5/plataforma-manager",
   "private_pr": 409,
-  "private_head_sha": "77554dd75df937c3e8265f9080c3c77d79290d98",
+  "private_head_sha": "66186cd6cb51f94f9a4bc58ee50087ea0c94686b",
   "public_ci_class": "PUBLIC_SYNTHETIC_AND_METADATA_ONLY",
   "private_code_in_public_repo": false,
   "private_runtime_verified": false,
