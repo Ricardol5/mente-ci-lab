@@ -1,0 +1,32 @@
+name: TRT8 Family Public Synthetic Contract
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/trt8-family-public-contract.yml'
+      - 'tests/test_trt8_family_public_contract.py'
+      - 'receipts/trt8-family-pr409.json'
+  pull_request:
+    paths:
+      - '.github/workflows/trt8-family-public-contract.yml'
+      - 'tests/test_trt8_family_public_contract.py'
+      - 'receipts/trt8-family-pr409.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  trt8-synthetic-contract:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.11'
+      - name: Install pytest
+        run: python -m pip install pytest
+      - name: Public synthetic TRT8 contract and custody receipt
+        run: python -m pytest -q tests/test_trt8_family_public_contract.py
